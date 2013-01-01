@@ -7,3 +7,6 @@
 [submodule "cookbooks/openssh"]
 	path = cookbooks/openssh
 	url = git://github.com/opscode-cookbooks/openssh.git
+[submodule "cookbooks/git"]
+	path = cookbooks/git
+	url = git://github.com/opscode-cookbooks/git.git
