@@ -4,3 +4,6 @@
 [submodule "cookbooks/vim"]
 	path = cookbooks/vim
 	url = git://github.com/opscode-cookbooks/vim.git
+[submodule "cookbooks/openssh"]
+	path = cookbooks/openssh
+	url = git://github.com/opscode-cookbooks/openssh.git
