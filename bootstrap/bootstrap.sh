@@ -1,16 +1,44 @@
 #!/bin/bash
 
 # need to get the system setup enough to get chef solo to do the 
+OS="ubuntu" # default
+pkg_mger="apt-get"
+# Figure out the OS type, for now it is either Ubuntu or CentOS
+if [ -e "/usr/bin/lsb_release" ]
+then
+	lsb_release -a | grep -qi ubuntu
+	is_ubuntu=$?
+	if [ "${is_ubuntu}" -eq 0 ]
+	then
+		for i in `dpkg --get-selections | grep grub | grep install`
+		do
+			echo "$i hold" | dpkg --set-selections
+		done
+	fi
+
+elif [ -e "/etc/centos-release" ]
+then
+	OS="centos"
+	pkg_mger="yum"
+fi
 
 # update the box 
 echo "Updating the box..."
-#apt-get -y upgrade
+if [ "$OS" == "ubuntu" ]
+then
+	echo "OS is $OS"
+	#${pkg_mger} -y upgrade
+elif [ "$OS" == "centos" ]
+then
+	echo "OS is $OS"
+	#${pkg_mger} -y update
+fi
 
 # install ruby gems
 if [ ! -e "/usr/bin/gem" ]
 then
 	echo "Installing ruby gems"
-	apt-get -y install rubygems
+	${pkg_mger} -y install rubygems
 else
 	echo "Ruby Gems already installed"
 fi
@@ -19,7 +47,7 @@ fi
 if [ ! -e "/usr/bin/git" ]
 then
 	echo "Installing git"
-	apt-get -y install git
+	${pkg_mger} -y install git
 else
 	echo "Git already installed"
 fi
