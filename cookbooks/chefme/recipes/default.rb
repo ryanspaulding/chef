@@ -1,12 +1,10 @@
-directory "#{ENV['HOME']}/Applications"
+directory "#{ENV['HOME']}/bin"
 
-case node['platform_family']
+case node['platform']
 when "mac_os_x"
-	cookbook_file "~/bin/chefme.sh" do
+	cookbook_file "#{ENV['HOME']}/bin/chefme.sh" do
 		source "chefme.sh"
 		mode 0755
-		owner "root"
-		group "root"
 	end
 		
 else
