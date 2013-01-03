@@ -3,4 +3,4 @@
 echo "Updating cookbooks and roles..."
 cd <%= @chefhome %> && git pull origin master && git submodule update
 echo "Chefing...."
-chef-solo -j <%= @chefhome %>/runlist.json
+chef-solo -j <%= @chefhome %>/runlist.json -c <%= @chefhome %>/solo.rb
