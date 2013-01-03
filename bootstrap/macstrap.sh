@@ -97,15 +97,13 @@ else
 	cd ~/chef-solo && git pull origin master && git submodule update
 fi
 
-cat << 'SOLO' > ~/chef-solo/solo.rb
-file_cache_path "~/chef-solo"
-cookbook_path "~/chef-solo/cookbooks"
-role_path "~/chef-solo/roles"
-SOLO
+echo "file_cache_path \"$HOME/chef-solo\"" > ~/chef-solo/solo.rb
+echo "cookbook_path \"$HOME/chef-solo/cookbooks\"" >> ~/chef-solo/solo.rb
+echo "role_path \"$HOME/chef-solo/roles\"" >> ~/chef-solo/solo.rb
 
 cat << 'RUN' > ~/chef-solo/runlist.json
 { "run_list": "role[macbox]" }
 RUN
 
 # run chef
-#chef-solo -j ~/chef-solo/runlist.json
+chef-solo -j ~/chef-solo/runlist.json -c ~/chef-solo/solo.rb
