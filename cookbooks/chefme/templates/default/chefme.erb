@@ -1,0 +1,6 @@
+#/bin/bash
+
+echo "Updating cookbooks and roles..."
+cd <%= @chefhome %> && git pull origin master && git submodule update
+echo "Chefing...."
+chef-solo -j <%= @chefhome %>/runlist.json
