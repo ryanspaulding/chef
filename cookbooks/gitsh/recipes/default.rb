@@ -1,4 +1,2 @@
-package "git-sh" do
-	action :install
-end
+homebrew_package "git-sh"
 
