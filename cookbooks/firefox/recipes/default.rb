@@ -2,7 +2,9 @@ directory "#{ENV['HOME']}/Applications"
 
 get_latest = Mixlib::ShellOut.new("curl -q -X GET http://download.cdn.mozilla.net/pub/mozilla.org/firefox/releases/latest/mac/en-US/ | grep '.dmg' | sed 's/^.*\=\"Fire/Fire/' | sed 's/.dmg\">.*$/.dmg/g'")
 
-firefox_latest = get_latest.run_command
+get_latest.run_command
+
+firefox_latest = get_latest.stdout
 
 log firefox_latest
 
