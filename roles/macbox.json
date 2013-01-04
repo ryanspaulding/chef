@@ -5,5 +5,5 @@
   "json_class": "Chef::Role",
   "description": "Mac box setup with no Admin",
   "chef_type": "role",
-  "run_list": [ "recipe[dmg]", "recipe[homebrew]", "recipe[googlechrome]", "recipe[chefme]", "recipe[userprefs]", "recipe[gitsh]" ]
+  "run_list": [ "recipe[dmg]", "recipe[googlechrome]", "recipe[chefme]", "recipe[userprefs]", "recipe[gitsh]" ]
 }
