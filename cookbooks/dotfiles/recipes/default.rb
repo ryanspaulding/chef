@@ -10,6 +10,11 @@ cookbook_file "#{ENV['HOME']}/.bashrc" do
 	mode 0755	
 end
 
+cookbook_file "#{ENV['HOME']}/.vimrc" do
+	source "vimrc"
+	mode 0755	
+end
+
 cookbook_file "#{ENV['HOME']}/bin/git-completion.bash" do
 	mode 0755	
 end
