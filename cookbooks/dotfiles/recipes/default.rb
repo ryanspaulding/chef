@@ -16,6 +16,6 @@ end
 
 template "#{ENV['HOME']}/.gitconfig" do
 	source "gitconfig.erb"
-	
+	variables(:gitname => node.gitname, :gitemail => node.gitemail)	
 end
 
