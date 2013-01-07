@@ -1,0 +1,21 @@
+
+# path
+PATH=~/bin:~/.rbenv/bin:/Users/rspauldi/homebrew/bin/:/Users/rspauldi/homebrew/bin/:/Users/rspauldi/homebrew/bin/:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin
+
+# rbenv
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+# Git
+source ~/bin/git-sh/git-completion.bash
+export PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\]$(__git_ps1) \w \$\[\033[00m\] '
+alias gll='git log --abbrev-commit --pretty=oneline'
+alias glm='git log --abbrev-commit --stat'
+
+# PS
+PS1="`hostname`.`whoami` $ "
+PS2="`hostname`.`whoami` $ "
+
+# ls colors
+export CLICOLOR=1
+
+export PATH
