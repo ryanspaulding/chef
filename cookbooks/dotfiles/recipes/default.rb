@@ -14,3 +14,8 @@ cookbook_file "#{ENV['HOME']}/bin/git-completion.bash" do
 	mode 0755	
 end
 
+template "#{ENV['HOME']}/.gitconfig" do
+	source "gitconfig.erb"
+	
+end
+
