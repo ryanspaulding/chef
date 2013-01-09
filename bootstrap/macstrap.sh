@@ -49,7 +49,7 @@ fi
 if [ ! -e ~/homebrew/bin/rbenv ]
 then
 	echo "Installing rbenv"
-	brew instal rbenv
+	brew install rbenv
 	echo "export PATH=~/.rbenv/bin:${PATH}" >> ~/.bashrc
 	echo 'if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi' >> ~/.bashrc
 	export PATH=~/.rbenv/bin:${PATH}
