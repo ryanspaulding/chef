@@ -1,4 +1,3 @@
-directory "#{ENV['HOME']}/bin"
 
 cookbook_file "#{ENV['HOME']}/.bash_profile" do
 	source "bash_profile"
