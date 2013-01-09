@@ -105,6 +105,7 @@ fi
 echo "file_cache_path \"$HOME/chef-solo\"" > ~/chef-solo/solo.rb
 echo "cookbook_path \"$HOME/chef-solo/cookbooks\"" >> ~/chef-solo/solo.rb
 echo "role_path \"$HOME/chef-solo/roles\"" >> ~/chef-solo/solo.rb
+echo "file_backup_path \"$HOME/chef-solo/backups\"" >> ~/chef-solo/solo.rb
 echo "cache_type \"BasicFile\"" >> ~/chef-solo/solo.rb
 echo "cache_options({ :path => \"$HOME/chef-solo/cache/checksums\", :skip_expires => true })" >> ~/chef-solo/solo.rb
 
