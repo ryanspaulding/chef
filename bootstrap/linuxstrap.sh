@@ -2,15 +2,6 @@
 
 ruby_version="1.9.3-p362"
 
-# ssh key setup 
-if [ ! -e ~/.ssh/id_rsa ]
-then
-	echo "Generating ssh key pair"
-	ssh-keygen -t rsa
-else
-	echo "ssh key pair present"
-fi
-
 # brew installed
 if [ ! -e ~/homebrew/bin/brew ]
 then
