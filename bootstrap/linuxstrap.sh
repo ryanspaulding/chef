@@ -73,7 +73,7 @@ else
 fi
 
 # install ruby 
-if [ ! -e /Users/rspauldi/.rbenv/shims/ruby ]
+if [ ! -e ~/.rbenv/shims/ruby ]
 then 
 	echo "Installing ruby $ruby_version"
 	rbenv install "${ruby_version}"
@@ -84,7 +84,7 @@ else
 fi
 
 # install chef 
-if [ ! -e /Users/rspauldi/.rbenv/shims/chef-solo ]
+if [ ! -e ~/.rbenv/shims/chef-solo ]
 then
 	echo "Installing chef"
 	gem install -y chef
