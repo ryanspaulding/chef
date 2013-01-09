@@ -1,7 +1,7 @@
 directory "#{ENV['HOME']}/bin"
 
-case node['platform']
-when "mac_os_x"
+
+if node.run_list.role_names.to_s =~ /linuxbox/ or node.run_list.role_names.to_s =~ /macbox/ 
 	template "#{ENV['HOME']}/bin/chefme.sh" do
 		source "chefme.erb"
 		mode 0755
