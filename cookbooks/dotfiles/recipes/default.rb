@@ -26,6 +26,6 @@ end
 if node.run_list.role_names.to_s =~ /macbox/ 
 	cookbook_file "#{ENV['HOME']}/.ssh/config" do
 		source "mac_ssh_config"
-		mode 700 
+		mode 0700 
 	end
 end
