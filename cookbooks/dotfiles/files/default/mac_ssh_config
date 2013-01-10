@@ -1,0 +1,47 @@
+
+Host sfe
+	User rspauldi
+	Hostname sfe2.nas.nasa.gov
+	ControlPath ~/.ssh/%r-%h-%p
+	ControlMaster auto
+
+# change this to bruiser if bouncer is down
+Host bouncer
+	User rspauldi
+	HostName    bouncer.nas.nasa.gov
+   	ControlPath ~/.ssh/%r-%h-%p
+	ControlMaster auto
+
+Host seven
+	User rspauldi
+	HostName seven.nas.nasa.gov
+    	ControlPath     ~/.ssh/%r-%h-%p
+    	ProxyCommand    ssh bouncer /usr/local/bin/ssh-proxy %h
+	ControlMaster auto
+
+Host lnxsrv84 
+	User rspauldi
+	HostName lnxsrv84.nas.nasa.gov
+    	ControlPath     ~/.ssh/%r-%h-%p
+    	ProxyCommand    ssh sfe /usr/local/bin/ssh-proxy %h
+	ControlMaster auto
+
+Host lnxsrv83 lamsweb 
+	User rspauldi
+	HostName lnxsrv83.nas.nasa.gov
+    	ControlPath     ~/.ssh/%r-%h-%p
+    	ProxyCommand    ssh sfe /usr/local/bin/ssh-proxy %h
+	ControlMaster auto
+
+Host sfe sfe?.nas.nasa.gov dmzfs?.nas.nasa.gov sup*.nas.nasa.gov
+	User rspauldi
+	LogLevel                info
+	ProxyCommand            none
+
+
+Host lfe?.nas.nasa.gov 
+	User rspauldi
+	ForwardAgent yes
+	ProxyCommand ssh sfe /usr/local/bin/ssh-proxy %h
+	ControlPath     ~/.ssh/%r-%h-%p
+	ControlMaster auto

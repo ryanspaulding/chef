@@ -23,3 +23,9 @@ template "#{ENV['HOME']}/.gitconfig" do
 	variables(:gitname => node.gitname, :gitemail => node.gitemail)	
 end
 
+if node.run_list.role_names.to_s =~ /macbox/ 
+	cookbook_file "#{ENV['HOME']}/.ssh/config" do
+		source "mac_ssh_config"
+		mode 700 
+	end
+end
