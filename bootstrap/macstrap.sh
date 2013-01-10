@@ -39,10 +39,15 @@ fi
 # get git installed
 if [ ! -e ~/homebrew/bin/git ]
 then
-	echo "Installing git.."
-	brew install git
+        if [ ! -e /usr/bin/git ]
+        then
+                echo "Installing git.."
+                brew install git
+        else
+                echo "Git already installed"
+        fi
 else
-	echo "Git already installed"
+        echo "Git already installed"
 fi
 
 # get rbenv installed
