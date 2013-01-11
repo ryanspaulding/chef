@@ -12,6 +12,11 @@ alias gll='git log --abbrev-commit --pretty=oneline'
 alias glm='git log --abbrev-commit --stat'
 
 # ls colors
-export CLICOLOR=1
+if [ -e /etc/profile.d/colorls.sh ]
+then
+	. /etc/profile.d/colorls.sh
+else
+	export CLICOLOR=1
+fi
 
 export PATH
