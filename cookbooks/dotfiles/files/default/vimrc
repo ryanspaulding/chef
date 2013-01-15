@@ -1,1 +1,7 @@
 syntax on
+set background=dark
+set noautoindent
+set paste
+set ts=4
+set expandtab
+set ruler
