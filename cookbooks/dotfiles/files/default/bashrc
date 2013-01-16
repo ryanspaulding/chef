@@ -1,6 +1,6 @@
 
 # path
-PATH=~/bin:~/.rbenv/bin:~/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin
+PATH=~/bin:~/.rbenv/bin:~/homebrew/bin:~/homebrew/Cellar/python/2.7.3/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin
 
 # rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
